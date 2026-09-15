@@ -1,0 +1,118 @@
+{"kind":"deck","id":"pr/hce2ko","name":"Deck"}
+{"kind":"layout","layoutId":"9f96589a-f4d3-4d98-a6d8-f0b81edf4fa8","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"e6cd70e3-85c6-46f3-9051-29ed06db790e","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/ci5q1j","slide":1,"title":"OTAGO HOME EXERCISE COACH","textShapes":7}
+{"kind":"shape","id":"sh/dc3adk72","slide":1,"bbox":[0,0,28,720]}
+{"kind":"textbox","id":"sh/qpsb258r","slide":1,"text":"OTAGO HOME EXERCISE COACH","textPreview":"OTAGO HOME EXERCISE COACH","textChars":25,"textLines":1,"bbox":[82,102,900,26]}
+{"kind":"textbox","id":"sh/bqlsbapw","slide":1,"text":"Motion interface\nfor realtime coaching","textPreview":"Motion interface | for realtime coaching","textChars":38,"textLines":2,"bbox":[80,160,950,145]}
+{"kind":"textbox","id":"sh/onat0fql","slide":1,"text":"Recorded GVHMR motion with online action judgment","textPreview":"Recorded GVHMR motion with online action judgment","textChars":49,"textLines":1,"bbox":[84,338,830,50]}
+{"kind":"shape","id":"sh/poja9k76","slide":1,"bbox":[84,472,880,2]}
+{"kind":"textbox","id":"sh/2lsby58f","slide":1,"text":"Prototype actions","textPreview":"Prototype actions","textChars":17,"textLines":1,"bbox":[84,505,220,28]}
+{"kind":"textbox","id":"sh/3m1s7ap0","slide":1,"text":"Knee bends","textPreview":"Knee bends","textChars":10,"textLines":1,"bbox":[302,498,270,40]}
+{"kind":"textbox","id":"sh/gjatwvq9","slide":1,"text":"One-leg stand","textPreview":"One-leg stand","textChars":13,"textLines":1,"bbox":[625,498,310,40]}
+{"kind":"textbox","id":"sh/1kja507u","slide":1,"text":"Real reconstructed coordinates\nShared semantic motion interface","textPreview":"Real reconstructed coordinates | Shared semantic motion interface","textChars":63,"textLines":2,"bbox":[84,590,740,60]}
+{"kind":"notes","id":"nt/ci5q1j","slide":1,"text":"Implementation sources: public/gvhmr-motion.js; scripts/prepare_gvhmr_demo.py; public/motion-data/gvhmr-demo.json."}
+{"kind":"slide","id":"sl/c49aw6","slide":2,"title":"DATA PATH","textShapes":25}
+{"kind":"textbox","id":"sh/edcvyh87","slide":2,"text":"DATA PATH","textPreview":"DATA PATH","textChars":9,"textLines":1,"bbox":[70,31,1140,22]}
+{"kind":"textbox","id":"sh/103etcri","slide":2,"text":"Recorded motion, online judgment","textPreview":"Recorded motion, online judgment","textChars":32,"textLines":1,"bbox":[70,58,1140,52]}
+{"kind":"textbox","id":"sh/0zux0rqx","slide":2,"text":"PREPARED BEFORE THE DEMO","textPreview":"PREPARED BEFORE THE DEMO","textChars":24,"textLines":1,"bbox":[70,139,520,24]}
+{"kind":"textbox","id":"sh/ralwn29g","slide":2,"text":"COMPUTED DURING THE DEMO","textPreview":"COMPUTED DURING THE DEMO","textChars":24,"textLines":1,"bbox":[680,139,530,24]}
+{"kind":"shape","id":"sh/q9svux8v","slide":2,"bbox":[70,176,530,380]}
+{"kind":"shape","id":"sh/dc3epcrm","slide":2,"bbox":[680,176,530,380]}
+{"kind":"textbox","id":"sh/cbudw7q1","slide":2,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[96,209,50,26]}
+{"kind":"textbox","id":"sh/b65wz69k","slide":2,"text":"GVHMR reconstruction","textPreview":"GVHMR reconstruction","textChars":20,"textLines":1,"bbox":[154,205,400,30]}
+{"kind":"textbox","id":"sh/a5wf618f","slide":2,"text":"30 FPS global SMPL-24 coordinates","textPreview":"30 FPS global SMPL-24 coordinates","textChars":33,"textLines":1,"bbox":[154,243,390,42]}
+{"kind":"textbox","id":"sh/wnitcfmx","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[96,315,50,26]}
+{"kind":"textbox","id":"sh/x8rulkni","slide":2,"text":"Action interval selection","textPreview":"Action interval selection","textChars":25,"textLines":1,"bbox":[154,311,400,30]}
+{"kind":"textbox","id":"sh/algbap4r","slide":2,"text":"Two recorded clips cropped to the target motion","textPreview":"Two recorded clips cropped to the target motion","textChars":47,"textLines":1,"bbox":[154,349,390,42]}
+{"kind":"textbox","id":"sh/vmpcju5c","slide":2,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[96,421,50,26]}
+{"kind":"textbox","id":"sh/8jyt8fml","slide":2,"text":"Compact joint frames","textPreview":"Compact joint frames","textChars":20,"textLines":1,"bbox":[154,417,400,30]}
+{"kind":"textbox","id":"sh/9k7uhkn6","slide":2,"text":"10 joints retained and stored at 5 or 10 FPS","textPreview":"10 joints retained and stored at 5 or 10 FPS","textChars":44,"textLines":1,"bbox":[154,455,390,42]}
+{"kind":"textbox","id":"sh/mhgb654v","slide":2,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[706,209,50,26]}
+{"kind":"textbox","id":"sh/nipcfa50","slide":2,"text":"Timed frame release","textPreview":"Timed frame release","textChars":19,"textLines":1,"bbox":[764,205,400,30]}
+{"kind":"textbox","id":"sh/0fyt4vmp","slide":2,"text":"Recorded coordinates replayed at 1× source time","textPreview":"Recorded coordinates replayed at 1× source time","textChars":47,"textLines":1,"bbox":[764,243,390,42]}
+{"kind":"textbox","id":"sh/lg7ud0na","slide":2,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[706,315,50,26]}
+{"kind":"textbox","id":"sh/1cza1wfy","slide":2,"text":"Feature calculation","textPreview":"Feature calculation","textChars":19,"textLines":1,"bbox":[764,311,400,30]}
+{"kind":"textbox","id":"sh/gbq98ryd","slide":2,"text":"Angles, drift, sway and duration update per frame","textPreview":"Angles, drift, sway and duration update per frame","textChars":49,"textLines":1,"bbox":[764,349,390,42]}
+{"kind":"textbox","id":"sh/faxszmxs","slide":2,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[706,421,50,26]}
+{"kind":"textbox","id":"sh/e9or6hgn","slide":2,"text":"Semantic event generation","textPreview":"Semantic event generation","textChars":25,"textLines":1,"bbox":[764,417,400,30]}
+{"kind":"textbox","id":"sh/t8faxcf2","slide":2,"text":"Counting and result JSON produced live","textPreview":"Counting and result JSON produced live","textChars":38,"textLines":1,"bbox":[764,455,390,42]}
+{"kind":"shape","id":"sh/s7694ryh","slide":2,"bbox":[70,583,1140,55]}
+{"kind":"textbox","id":"sh/r6x8vmxw","slide":2,"text":"The recording is fixed. Feature calculation, temporal detection, counting and result JSON run online.","textPreview":"The recording is fixed. Feature calculation, temporal detection, counting and result JSON run online.","textChars":101,"textLines":1,"bbox":[94,598,1090,30]}
+{"kind":"shape","id":"sh/6lor2hgb","slide":2,"bbox":[70,681,1140,1]}
+{"kind":"textbox","id":"sh/x4ja9gf6","slide":2,"text":"Otago motion interface prototype","textPreview":"Otago motion interface prototype","textChars":32,"textLines":1,"bbox":[70,688,400,16]}
+{"kind":"textbox","id":"sh/c3a9gbyl","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1165,688,45,16]}
+{"kind":"notes","id":"nt/c49aw6","slide":2,"text":"Joint selection and downsampling are preprocessing steps. The browser calculates features and semantic results online for each released real frame. Sources: scripts/prepare_gvhmr_demo.py lines 18–148; public/gvhmr-motion.js lines 26–346."}
+{"kind":"slide","id":"sl/omtmbv","slide":3,"title":"ACTION RULE 1","textShapes":17}
+{"kind":"textbox","id":"sh/jmx0rip0","slide":3,"text":"ACTION RULE 1","textPreview":"ACTION RULE 1","textChars":13,"textLines":1,"bbox":[70,31,1140,22]}
+{"kind":"textbox","id":"sh/kn6h0n6l","slide":3,"text":"Knee-bend detector","textPreview":"Knee-bend detector","textChars":18,"textLines":1,"bbox":[70,58,1140,52]}
+{"kind":"textbox","id":"sh/lofits76","slide":3,"text":"Joints","textPreview":"Joints","textChars":6,"textLines":1,"bbox":[70,139,110,24]}
+{"kind":"textbox","id":"sh/6poz2xor","slide":3,"text":"bilateral hip, knee and ankle; pelvis and neck","textPreview":"bilateral hip, knee and ankle; pelvis and neck","textChars":46,"textLines":1,"bbox":[175,134,800,34]}
+{"kind":"shape","id":"sh/7qh0v2pw","slide":3,"bbox":[70,183,1140,2]}
+{"kind":"textbox","id":"sh/8rqh4n6h","slide":3,"text":"Cycle","textPreview":"Cycle","textChars":5,"textLines":1,"bbox":[70,215,100,24]}
+{"kind":"textbox","id":"sh/tszixs72","slide":3,"text":"≤ 140° descent","textPreview":"≤ 140° descent","textChars":14,"textLines":1,"bbox":[175,208,250,38]}
+{"kind":"textbox","id":"sh/mt4zqt87","slide":3,"text":"then","textPreview":"then","textChars":4,"textLines":1,"bbox":[437,212,62,30]}
+{"kind":"textbox","id":"sh/nudgjyps","slide":3,"text":"≥ 158° return","textPreview":"≥ 158° return","textChars":13,"textLines":1,"bbox":[510,208,250,38]}
+{"kind":"textbox","id":"sh/budgjm5o","slide":3,"text":"one repetition candidate","textPreview":"one repetition candidate","textChars":24,"textLines":1,"bbox":[790,208,350,38]}
+{"kind":"textbox","id":"sh/at4zqho3","slide":3,"text":"Restrictions","textPreview":"Restrictions","textChars":12,"textLines":1,"bbox":[70,273,140,24]}
+{"kind":"textbox","id":"sh/xwvilwnu","slide":3,"text":"Depth ≤ 140°","textPreview":"Depth ≤ 140°","textChars":12,"textLines":1,"bbox":[214,268,220,34]}
+{"kind":"textbox","id":"sh/wvmhsr69","slide":3,"text":"Angle gap ≤ 18°","textPreview":"Angle gap ≤ 18°","textChars":15,"textLines":1,"bbox":[460,268,230,34]}
+{"kind":"textbox","id":"sh/nqtgf25c","slide":3,"text":"Trunk lean ≤ 22°","textPreview":"Trunk lean ≤ 22°","textChars":16,"textLines":1,"bbox":[720,268,250,34]}
+{"kind":"textbox","id":"sh/mpkzmxor","slide":3,"text":"Real results from output1","textPreview":"Real results from output1","textChars":25,"textLines":1,"bbox":[70,329,500,32]}
+{"kind":"textbox","id":"sh/ormho76x","slide":3,"text":"Pelvis drop / mean leg length is logged, but it does not affect pass or fail yet.","textPreview":"Pelvis drop / mean leg length is logged, but it does not affect pass or fail yet.","textChars":81,"textLines":1,"bbox":[70,618,1030,28]}
+{"kind":"shape","id":"sh/z2tgb2pg","slide":3,"bbox":[70,681,1140,1]}
+{"kind":"textbox","id":"sh/e1kzixov","slide":3,"text":"Otago motion interface prototype","textPreview":"Otago motion interface prototype","textChars":32,"textLines":1,"bbox":[70,688,400,16]}
+{"kind":"textbox","id":"sh/2x0zux8n","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1165,688,45,16]}
+{"kind":"table","id":"tb/mtobm543","slide":3,"name":"","rows":6,"cols":5,"preview":"Rep | Minimum knee angle | Maximum L/R gap | Maximum trunk lean | Result","bbox":[70,377,1140,218]}
+{"kind":"notes","id":"nt/omtmbv","slide":3,"text":"The detector computes both hip-knee-ankle angles, uses the more flexed side for phase detection, and evaluates depth, symmetry, and pelvis-to-neck lean over each completed cycle. Real results come from output1/back_extension_knee_bends/joints3d_global.npy. Prototype thresholds require PT calibration."}
+{"kind":"slide","id":"sl/0holqb","slide":4,"title":"BALANCE RULE","textShapes":17}
+{"kind":"textbox","id":"sh/a943epcv","slide":4,"text":"BALANCE RULE","textPreview":"BALANCE RULE","textChars":12,"textLines":1,"bbox":[70,31,1140,22]}
+{"kind":"textbox","id":"sh/xcvmp4bm","slide":4,"text":"One-leg-stand detector","textPreview":"One-leg-stand detector","textChars":22,"textLines":1,"bbox":[70,58,1140,52]}
+{"kind":"textbox","id":"sh/wbmlgzu1","slide":4,"text":"Joints","textPreview":"Joints","textChars":6,"textLines":1,"bbox":[70,139,110,24]}
+{"kind":"textbox","id":"sh/nmtkjatk","slide":4,"text":"lifted ankle; stance hip, knee, ankle and foot; pelvis and neck","textPreview":"lifted ankle; stance hip, knee, ankle and foot; pelvis and neck","textChars":63,"textLines":1,"bbox":[175,134,960,34]}
+{"kind":"shape","id":"sh/mlk3apcz","slide":4,"bbox":[70,183,1140,2]}
+{"kind":"textbox","id":"sh/9ov2lkba","slide":4,"text":"Foot lift","textPreview":"Foot lift","textChars":9,"textLines":1,"bbox":[70,220,250,30]}
+{"kind":"textbox","id":"sh/8nmlcfup","slide":4,"text":"≥ 0.18 leg lengths","textPreview":"≥ 0.18 leg lengths","textChars":18,"textLines":1,"bbox":[70,257,250,36]}
+{"kind":"textbox","id":"sh/7ix4veto","slide":4,"text":"Stance drift","textPreview":"Stance drift","textChars":12,"textLines":1,"bbox":[355,220,250,30]}
+{"kind":"textbox","id":"sh/6ho3m9s3","slide":4,"text":"≤ 0.12 leg lengths","textPreview":"≤ 0.12 leg lengths","textChars":18,"textLines":1,"bbox":[355,257,250,36]}
+{"kind":"textbox","id":"sh/0rypgne1","slide":4,"text":"Pelvis sway","textPreview":"Pelvis sway","textChars":11,"textLines":1,"bbox":[640,220,250,30]}
+{"kind":"textbox","id":"sh/1crqpsfm","slide":4,"text":"≤ 0.22 leg lengths","textPreview":"≤ 0.22 leg lengths","textChars":18,"textLines":1,"bbox":[640,257,250,36]}
+{"kind":"textbox","id":"sh/epg7edwb","slide":4,"text":"Trunk lean","textPreview":"Trunk lean","textChars":10,"textLines":1,"bbox":[925,220,250,30]}
+{"kind":"textbox","id":"sh/zqp8nixw","slide":4,"text":"≤ 20°","textPreview":"≤ 20°","textChars":5,"textLines":1,"bbox":[925,257,250,36]}
+{"kind":"shape","id":"sh/cnypc3e5","slide":4,"bbox":[70,315,1140,63]}
+{"kind":"textbox","id":"sh/do7ql8fq","slide":4,"text":"All four conditions must remain valid for 10 seconds. Any invalid frame resets the timer.","textPreview":"All four conditions must remain valid for 10 seconds. Any invalid frame resets the timer.","textChars":89,"textLines":1,"bbox":[94,333,1090,30]}
+{"kind":"textbox","id":"sh/qlg7adwz","slide":4,"text":"Real results from output2","textPreview":"Real results from output2","textChars":25,"textLines":1,"bbox":[70,412,500,32]}
+{"kind":"textbox","id":"sh/4jep83et","slide":4,"text":"Distances use stance leg length: hip-to-knee plus knee-to-ankle.","textPreview":"Distances use stance leg length: hip-to-knee plus knee-to-ankle.","textChars":64,"textLines":1,"bbox":[70,617,860,28]}
+{"kind":"shape","id":"sh/pkn6h8fe","slide":4,"bbox":[70,681,1140,1]}
+{"kind":"textbox","id":"sh/5gf65k7i","slide":4,"text":"Otago motion interface prototype","textPreview":"Otago motion interface prototype","textChars":32,"textLines":1,"bbox":[70,688,400,16]}
+{"kind":"textbox","id":"sh/4f65cfqx","slide":4,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1165,688,45,16]}
+{"kind":"table","id":"tb/s729c3ax","slide":4,"name":"","rows":3,"cols":7,"preview":"Side | Hold | Lift ratio | Max. stance drift | Max. pelvis sway | Max. trunk lean | Result","bbox":[70,463,1140,130]}
+{"kind":"notes","id":"nt/0holqb","slide":4,"text":"The support foot and pelvis are tracked in the horizontal XZ plane. Displacements are normalized by stance leg length. Real results come from output2/heel_toe_standing_one_leg_stand/joints3d_global.npy. Prototype thresholds require PT calibration."}
+{"kind":"slide","id":"sl/kk3oax","slide":5,"title":"FUNCTION DESIGN","textShapes":21}
+{"kind":"textbox","id":"sh/tsfi9g72","slide":5,"text":"FUNCTION DESIGN","textPreview":"FUNCTION DESIGN","textChars":15,"textLines":1,"bbox":[70,31,1140,22]}
+{"kind":"textbox","id":"sh/65ozy1or","slide":5,"text":"Motion-to-agent interface","textPreview":"Motion-to-agent interface","textChars":25,"textLines":1,"bbox":[70,58,1140,52]}
+{"kind":"textbox","id":"sh/76x076pc","slide":5,"text":"Action detector","textPreview":"Action detector","textChars":15,"textLines":1,"bbox":[70,153,330,32]}
+{"kind":"shape","id":"sh/k36hwr6l","slide":5,"bbox":[70,202,330,210]}
+{"kind":"textbox","id":"sh/54fy5w76","slide":5,"text":"KneeBendDetector\nOneLegStandDetector\n\nDifferent joints and rules","textPreview":"KneeBendDetector | OneLegStandDetector |  | Different joints and rules","textChars":64,"textLines":4,"bbox":[94,232,282,160]}
+{"kind":"textbox","id":"sh/i14zu1of","slide":5,"text":"Shared event schema","textPreview":"Shared event schema","textChars":19,"textLines":1,"bbox":[470,153,330,32]}
+{"kind":"shape","id":"sh/j2dg3mp0","slide":5,"bbox":[470,202,330,210]}
+{"kind":"textbox","id":"sh/4zqh8v6p","slide":5,"text":"exercise\nobservation\nassessment\n\nSame output structure","textPreview":"exercise | observation | assessment |  | Same output structure","textChars":54,"textLines":5,"bbox":[494,232,282,160]}
+{"kind":"textbox","id":"sh/p0zi107a","slide":5,"text":"Controller and voice","textPreview":"Controller and voice","textChars":20,"textLines":1,"bbox":[870,153,330,32]}
+{"kind":"shape","id":"sh/p0ved43i","slide":5,"bbox":[870,202,330,210]}
+{"kind":"textbox","id":"sh/ozmd4zmx","slide":5,"text":"submit_session_event\n\nevent = motion_observation\n\nNo LLM tool per exercise","textPreview":"submit_session_event |  | event = motion_observation |  | No LLM tool per exercise","textChars":74,"textLines":5,"bbox":[894,232,282,160]}
+{"kind":"textbox","id":"sh/3ydwbulc","slide":5,"text":"Model-facing policy","textPreview":"Model-facing policy","textChars":19,"textLines":1,"bbox":[70,455,350,32]}
+{"kind":"textbox","id":"sh/2d4v2p4r","slide":5,"text":"Ordinary valid frame","textPreview":"Ordinary valid frame","textChars":20,"textLines":1,"bbox":[70,503,325,28]}
+{"kind":"textbox","id":"sh/1cve9k36","slide":5,"text":"Local detector only","textPreview":"Local detector only","textChars":19,"textLines":1,"bbox":[415,503,600,28]}
+{"kind":"textbox","id":"sh/gbmd0fml","slide":5,"text":"Valid repetition","textPreview":"Valid repetition","textChars":16,"textLines":1,"bbox":[70,541,325,28]}
+{"kind":"textbox","id":"sh/fadw7ul0","slide":5,"text":"Update deterministic controller","textPreview":"Update deterministic controller","textChars":31,"textLines":1,"bbox":[415,541,600,28]}
+{"kind":"textbox","id":"sh/e9kvyp4v","slide":5,"text":"Correction or safety event","textPreview":"Correction or safety event","textChars":26,"textLines":1,"bbox":[70,579,325,28]}
+{"kind":"textbox","id":"sh/l8felo3a","slide":5,"text":"Generate an immediate voice cue","textPreview":"Generate an immediate voice cue","textChars":31,"textLines":1,"bbox":[415,579,600,28]}
+{"kind":"textbox","id":"sh/k76xcj25","slide":5,"text":"Prescribed target complete","textPreview":"Prescribed target complete","textChars":26,"textLines":1,"bbox":[70,617,325,28]}
+{"kind":"textbox","id":"sh/kbeh8na1","slide":5,"text":"Advance state and introduce the next task","textPreview":"Advance state and introduce the next task","textChars":41,"textLines":1,"bbox":[415,617,600,28]}
+{"kind":"shape","id":"sh/5cnyhsbm","slide":5,"bbox":[1030,478,180,145]}
+{"kind":"textbox","id":"sh/i9wf6dsb","slide":5,"text":"Compact event","textPreview":"Compact event","textChars":13,"textLines":1,"bbox":[1050,497,140,24]}
+{"kind":"textbox","id":"sh/ja5gfitg","slide":5,"text":"rep_completed\ncorrect\ncount +1","textPreview":"rep_completed | correct | count +1","textChars":30,"textLines":3,"bbox":[1050,538,140,72]}
+{"kind":"shape","id":"sh/w7ex4na5","slide":5,"bbox":[70,681,1140,1]}
+{"kind":"textbox","id":"sh/x8nydsbq","slide":5,"text":"Otago motion interface prototype","textPreview":"Otago motion interface prototype","textChars":32,"textLines":1,"bbox":[70,688,400,16]}
+{"kind":"textbox","id":"sh/a5wf2dsz","slide":5,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1165,688,45,16]}
+{"kind":"notes","id":"nt/kk3oax","slide":5,"text":"The motion code has action-specific detectors, but GPT does not receive a separate function for every exercise. All detectors emit a common semantic event. The deterministic controller owns counts and state transitions. GPT receives only milestones and problems. Sources: public/gvhmr-motion.js; public/motion-schema.js; public/app.js pushMotionEvent; submit_session_event tool in the local controller."}

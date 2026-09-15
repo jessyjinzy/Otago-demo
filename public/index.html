@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Otago Realtime Voice Coach</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main>
+      <header class="hero">
+        <p class="eyebrow">Research prototype</p>
+        <h1>Otago Realtime Voice Coach</h1>
+        <p class="lede">An XTY-hosted GPT Realtime voice-and-vision agent with a compact cursor controller, generic session events, PT-prescription input, and a pluggable motion-perception interface.</p>
+      </header>
+
+      <section class="safety-note" aria-label="Safety notice">
+        This prototype does not replace a physical therapist. Stop if you feel pain, dizziness, chest pain,
+        severe shortness of breath, or instability, and seek appropriate human help.
+      </section>
+
+      <section class="card session-card">
+        <div>
+          <h2>Voice session</h2>
+          <p id="connection-status" data-kind="idle" role="status">Not connected.</p>
+          <div class="state-banner" aria-live="polite">
+            <span>Current Otago state</span>
+            <strong id="current-state-banner" data-state="not_started">Not started</strong>
+            <p id="current-state-detail">Start a voice session to create a fresh Otago run.</p>
+          </div>
+          <p class="state-line">Speech style: <strong id="coaching-style">Determined by program week</strong></p>
+          <div class="voice-control">
+            <label for="realtime-voice">Coach voice</label>
+            <select id="realtime-voice" aria-describedby="voice-hint">
+              <option value="marin">Marin — recommended</option>
+            </select>
+            <small id="voice-hint">The selected voice applies when the next session starts.</small>
+          </div>
+          <p class="state-line">Coach state: <strong id="coach-state">Not started</strong></p>
+          <p class="state-line">Prescription: <span id="prescription-status">Simulated prescription staged</span></p>
+          <p class="state-line">Camera: <strong id="camera-status" data-kind="idle">Off</strong></p>
+          <p class="session-note">Browser audio passes through a local WebSocket relay to XTY; one generic event function updates the compact local controller.</p>
+        </div>
+        <div class="button-row">
+          <button id="start-session" class="primary">Start voice session</button>
+          <button id="pause-presentation" class="secondary" disabled>Pause presentation</button>
+          <button id="new-session" class="secondary" disabled>New session</button>
+          <button id="stop-session" class="secondary" disabled>End session</button>
+        </div>
+        <audio id="remote-audio" autoplay></audio>
+      </section>
+
+      <section class="card camera-card">
+        <div>
+          <h2>On-demand vision checks</h2>
+          <p>After one browser permission at session start, the agent can autonomously request a still image in any active coaching state when visible evidence would reduce questions or clarify a decision. No per-photo confirmation is required. In this demo, each original JPEG is saved locally under <code>logs/images/</code>.</p>
+          <p class="camera-privacy">The live video track stays local. Only agent-requested still images are sent through the local relay to XTY as Realtime image inputs.</p>
+          <div class="camera-controls">
+            <label for="camera-device">Camera source</label>
+            <select id="camera-device">
+              <option value="">Automatic — prefer built-in camera</option>
+            </select>
+            <button id="reconnect-camera" class="secondary" type="button">Reconnect / test camera</button>
+            <p id="camera-diagnostics" class="camera-diagnostics">No camera track inspected yet.</p>
+          </div>
+        </div>
+        <div class="camera-views">
+          <figure>
+            <video id="camera-preview" autoplay muted playsinline></video>
+            <figcaption>Local camera preview</figcaption>
+          </figure>
+          <figure>
+            <img id="last-capture" alt="Most recent saved vision capture" />
+            <figcaption id="last-capture-caption">No photo captured yet</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="card motion-pipeline-card">
+        <div class="section-heading">
+          <div>
+            <h2>Motion reconstruction replay</h2>
+            <p>Default source: <code>public/motion-data/gvhmr-demo.json</code>, derived from the selected GVHMR sequences in <code>output1</code> and <code>output2</code>.</p>
+          </div>
+        </div>
+        <details class="replay-builder">
+          <summary>Configure reconstruction clips and replay order</summary>
+          <p>Select directly from <code>output1/output2</code>, crop a time interval, then arrange clips in the order supplied to successive active sets. A source clip may intentionally differ from the prescribed action to test open-world handling.</p>
+          <div class="replay-config-grid">
+            <div>
+              <label for="motion-raw-sequence">Raw GVHMR sequence</label>
+              <select id="motion-raw-sequence"><option value="">Loading output1/output2…</option></select>
+            </div>
+            <div>
+              <label for="motion-clip-start">Start time (s)</label>
+              <input id="motion-clip-start" type="number" min="0" step="0.1" value="0" />
+            </div>
+            <div>
+              <label for="motion-clip-end">End time (s)</label>
+              <input id="motion-clip-end" type="number" min="0.1" step="0.1" value="20" />
+            </div>
+            <div>
+              <label for="motion-analysis-fps">Analysis FPS</label>
+              <select id="motion-analysis-fps"><option value="5">5 FPS</option><option value="10">10 FPS</option></select>
+            </div>
+            <div>
+              <label for="motion-replay-fault">Optional fault</label>
+              <select id="motion-replay-fault">
+                <option value="none">None</option><option value="lower_body_occlusion">Lower-body occlusion</option>
+                <option value="tracking_dropout">Low tracking confidence</option><option value="periodic_frame_drop">Periodic dropped frames</option>
+                <option value="stream_gap">Two-second stream gap</option>
+              </select>
+            </div>
+            <div>
+              <label for="motion-replay-delay">Start delay (ms)</label>
+              <input id="motion-replay-delay" type="number" min="0" max="30000" step="250" value="0" />
+            </div>
+          </div>
+          <p id="motion-range-hint" class="field-hint">Choose a sequence to see its suggested interval for the current prescribed action.</p>
+          <div class="button-row replay-buttons">
+            <button id="motion-queue-add" class="secondary" type="button">Add to replay queue</button>
+            <button id="motion-use-now" class="secondary" type="button">Use now / replace pending</button>
+            <button id="motion-queue-clear" class="secondary" type="button">Use prescription-matched defaults</button>
+          </div>
+          <p class="field-hint">Entering an active set never starts motion automatically. Select “Use now” to stage an input, then press “Play motion.” During playback, “Use now” immediately switches the incoming sequence without resetting controller progress.</p>
+          <ol id="motion-replay-queue" class="replay-queue">
+            <li class="placeholder">Queue is empty; each set will use its built-in matching clip.</li>
+          </ol>
+        </details>
+        <div class="pipeline-strip" aria-label="Motion processing pipeline">
+          <span>GVHMR · 30 FPS</span><b>→</b><span>10 essential SMPL joints</span><b>→</b><span>action rules + activity supervisor</span><b>→</b><span>motion/vision belief</span><b>→</b><span>controller + voice</span>
+        </div>
+        <p id="motion-replay-status" data-kind="idle">Loading compact GVHMR replay data…</p>
+        <progress id="motion-replay-progress" max="100" value="0">0%</progress>
+        <div class="motion-playback-row">
+          <button id="motion-play-pause" class="secondary" type="button" disabled>Play motion</button>
+          <span id="motion-progress-label">Waiting for an active set</span>
+        </div>
+        <div class="motion-readouts">
+          <div>
+            <h3>Live features from real GVHMR frames</h3>
+            <pre id="motion-telemetry">Waiting for a prescribed active set.</pre>
+          </div>
+          <div>
+            <h3>Controller awareness of the participant</h3>
+            <pre id="motion-awareness">No active motion context yet.</pre>
+          </div>
+          <div>
+            <h3>Last semantic result → controller / coach milestone</h3>
+            <pre id="motion-result-json">No result emitted yet.</pre>
+          </div>
+        </div>
+      </section>
+
+      <div class="grid">
+        <section class="card">
+          <h2>Conversation</h2>
+          <div id="transcript" class="transcript" aria-live="polite">
+            <p class="placeholder">The transcript will appear here after the session begins.</p>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Motion event simulator</h2>
+          <p>Manual fallback for testing corrections or safety events. The GVHMR pipeline above supplies valid task evidence automatically.</p>
+          <label for="sample-event">Sample event</label>
+          <select id="sample-event">
+            <option value="correct">Valid current repetition — count +1</option>
+            <option value="correction">Needs correction — proactive feedback</option>
+            <option value="safety">Balance concern — safety response</option>
+            <option value="uncertain">Occluded landmarks — uncertainty</option>
+            <option value="set_complete">Set target complete</option>
+          </select>
+          <label for="event-json">Event JSON</label>
+          <textarea id="event-json" spellcheck="false"></textarea>
+          <button id="send-event" class="primary">Send event to coach</button>
+        </section>
+      </div>
+
+      <section class="card">
+        <div class="section-heading">
+          <div>
+            <h2>PT prescription interface</h2>
+            <p>The bundled JSON is a simulated input contract, not a clinician-approved plan. It can be replaced before warm-up begins.</p>
+          </div>
+          <button id="load-prescription" class="secondary">Stage / load prescription</button>
+        </div>
+        <textarea id="prescription-json" class="prescription-editor" spellcheck="false" aria-label="Prescription JSON"></textarea>
+      </section>
+
+      <section class="card">
+        <h2>Connect a collaborator's sensor stream</h2>
+        <p>
+          The browser accepts either one raw SMPL-24 joint frame or one semantic motion event per WebSocket message. Raw frames are analyzed locally at 5–10 FPS; meshes and video remain outside the language model. Start the voice session first.
+        </p>
+        <div class="sensor-row">
+          <input id="sensor-ws-url" value="ws://localhost:8765" aria-label="Sensor WebSocket URL" />
+          <button id="connect-sensor" class="secondary">Connect sensor</button>
+        </div>
+        <p id="sensor-status" data-kind="idle">Sensor disconnected.</p>
+      </section>
+
+      <section class="card">
+        <h2>Live event log</h2>
+        <p>Session summaries and transcripts are saved locally as deidentified JSON when you end or restart a session.</p>
+        <ul id="event-log" class="event-log"></ul>
+      </section>
+    </main>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

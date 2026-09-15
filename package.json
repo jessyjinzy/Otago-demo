@@ -1,0 +1,18 @@
+{
+  "name": "otago-realtime-coach-demo",
+  "version": "0.7.0",
+  "private": true,
+  "type": "module",
+  "description": "Otago voice coach with context-aware motion supervision, multimodal escalation, and GVHMR replay.",
+  "scripts": {
+    "start": "node server.mjs",
+    "test:motion-robustness": "node scripts/run_motion_robustness.mjs",
+    "test": "node --test test/conversation-continuity.test.mjs test/frame-quality.test.mjs test/gvhmr-motion.test.mjs test/motion-schema.test.mjs test/realtime-form.test.mjs test/realtime-protocol.test.mjs test/realtime-response.test.mjs test/simplified-controller.test.mjs test/vision-storage.test.mjs test/xty-realtime-relay.test.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "ws": "^8.21.3"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0",
+  "prescription_id": "OTAGO-WEEK8-TWO-ACTION-V1",
+  "prescription_version": "week8-session-v2",
+  "effective_date": "2026-09-09",
+  "program_week": 8,
+  "program_duration_weeks": 52,
+  "clinician_reviewed": false,
+  "demo_only": true,
+  "fast_demo_skip_opening_checks": false,
+  "allow_warm_up_omission_for_technical_demo": true,
+  "rest_between_exercises_seconds": 15,
+  "note": "Technical two-action demonstration only. It is not a complete home-exercise prescription and must not be used for training.",
+  "weekly_targets": {
+    "strength_days": 3,
+    "strength_rest_day_between": true,
+    "balance_days_minimum": 3,
+    "balance_may_be_daily_when_prescribed": true,
+    "warm_up_before_strength_or_balance": true
+  },
+  "weekly_history": {
+    "week_start": "2026-09-07",
+    "strength_days_completed": 2,
+    "balance_days_completed": 2,
+    "walking_days_completed": 1,
+    "unresolved_pt_review_flags": []
+  },
+  "walking_plan": {
+    "included_in_this_supervised_session": false,
+    "target": "Not part of this two-action session.",
+    "stair_walking": "Not part of this two-action session."
+  },
+  "warm_up": [],
+  "exercises": [
+    {
+      "id": "knee_bends",
+      "name": "Knee bends",
+      "category": "balance",
+      "set_sequence": [
+        {
+          "set_id": "demo-five-reps",
+          "side": "bilateral",
+          "repetitions": 5,
+          "support": "2H on a stable chair",
+          "motion_detector": "knee_bends_v1"
+        }
+      ]
+    },
+    {
+      "id": "one_leg_stand",
+      "name": "One-leg stand",
+      "category": "balance",
+      "set_sequence": [
+        {
+          "set_id": "left-foot-lifted",
+          "side": "left foot lifted",
+          "hold_seconds": 10,
+          "support": "1H on a stable chair",
+          "motion_detector": "one_leg_stand_v1"
+        },
+        {
+          "set_id": "right-foot-lifted",
+          "side": "right foot lifted",
+          "hold_seconds": 10,
+          "support": "1H on a stable chair",
+          "motion_detector": "one_leg_stand_v1"
+        }
+      ]
+    }
+  ],
+  "allowed_omissions": "This technical demo contains only two prescribed actions. A real Otago session must follow its PT-approved warm-up and full prescription.",
+  "clinician_only_decisions": [
+    "add_or_remove_exercise",
+    "change_support_level",
+    "change_repetitions_sets_hold_or_steps",
+    "progress_difficulty",
+    "restart_after_illness"
+  ]
+}

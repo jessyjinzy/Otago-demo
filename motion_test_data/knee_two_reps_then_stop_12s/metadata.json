@@ -1,0 +1,17 @@
+{
+  "name": "knee_two_reps_then_stop_12s",
+  "description": "Two knee bends followed by twelve seconds without body motion.",
+  "expected_supervisor_behavior": "Keep count at two and escalate sustained inactivity for clarification.",
+  "source_fps": 30.0,
+  "frame_count": 576,
+  "recommended_startup_delay_ms": 0,
+  "derived_from": [
+    "output1/back_extension_knee_bends/joints3d_global.npy",
+    "output2/heel_toe_standing_one_leg_stand/joints3d_global.npy"
+  ],
+  "sidecars": {
+    "timestamps_s.npy": "Per-frame source time; can encode a stream delay/gap.",
+    "tracking_confidence.npy": "Per-frame upstream reconstruction confidence.",
+    "joint_validity.npy": "Per-frame SMPL-24 visibility/validity mask."
+  }
+}

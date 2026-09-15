@@ -1,0 +1,17 @@
+{
+  "name": "wrong_for_knee_one_leg_only",
+  "description": "The one-leg recording is supplied while knee bends are prescribed.",
+  "expected_supervisor_behavior": "Do not count knee bends; infer a likely wrong activity and request visual clarification.",
+  "source_fps": 30.0,
+  "frame_count": 390,
+  "recommended_startup_delay_ms": 0,
+  "derived_from": [
+    "output1/back_extension_knee_bends/joints3d_global.npy",
+    "output2/heel_toe_standing_one_leg_stand/joints3d_global.npy"
+  ],
+  "sidecars": {
+    "timestamps_s.npy": "Per-frame source time; can encode a stream delay/gap.",
+    "tracking_confidence.npy": "Per-frame upstream reconstruction confidence.",
+    "joint_validity.npy": "Per-frame SMPL-24 visibility/validity mask."
+  }
+}

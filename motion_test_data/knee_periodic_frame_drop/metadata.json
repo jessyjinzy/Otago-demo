@@ -1,0 +1,17 @@
+{
+  "name": "knee_periodic_frame_drop",
+  "description": "Every fourth frame is removed from the recorded knee-bend sequence.",
+  "expected_supervisor_behavior": "Tolerate intermittent loss and preserve valid repetition counting.",
+  "source_fps": 30.0,
+  "frame_count": 382,
+  "recommended_startup_delay_ms": 0,
+  "derived_from": [
+    "output1/back_extension_knee_bends/joints3d_global.npy",
+    "output2/heel_toe_standing_one_leg_stand/joints3d_global.npy"
+  ],
+  "sidecars": {
+    "timestamps_s.npy": "Per-frame source time; can encode a stream delay/gap.",
+    "tracking_confidence.npy": "Per-frame upstream reconstruction confidence.",
+    "joint_validity.npy": "Per-frame SMPL-24 visibility/validity mask."
+  }
+}

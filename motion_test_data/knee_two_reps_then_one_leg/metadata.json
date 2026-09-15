@@ -1,0 +1,17 @@
+{
+  "name": "knee_two_reps_then_one_leg",
+  "description": "Two valid knee bends followed by the recorded one-leg activity.",
+  "expected_supervisor_behavior": "Accept two repetitions, then freeze counting and request activity clarification.",
+  "source_fps": 30.0,
+  "frame_count": 456,
+  "recommended_startup_delay_ms": 0,
+  "derived_from": [
+    "output1/back_extension_knee_bends/joints3d_global.npy",
+    "output2/heel_toe_standing_one_leg_stand/joints3d_global.npy"
+  ],
+  "sidecars": {
+    "timestamps_s.npy": "Per-frame source time; can encode a stream delay/gap.",
+    "tracking_confidence.npy": "Per-frame upstream reconstruction confidence.",
+    "joint_validity.npy": "Per-frame SMPL-24 visibility/validity mask."
+  }
+}
